@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="eng-gb">
+
+<head>
+    <title>XRmine Mining page</title>
+    <meta charset="UTF-8">
+    <meta name="XRmine" content="Creating a safer route into digital assets on the XRP Ledger">
+    <meta author="Aspencer">
+    <meta keywords="XRP, xrp, XRPL, xrpl, xrp community, app, web app, XRMine, xrmine, digital assets, blockchain">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1683443669163028481/q1i3sD9X_400x400.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/stylesheet/app.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <img id="logo" src="assets/images/XRmine.title.png" alt="XRmine Logo">
+        </div>
+
+        <h1 id="accountaddress">...</h1>
+    </header>
+
+    <main>
+        
+        <section>
+        <div class="tknDiv" id="xrmineMine">
+            <h3>XRmine</h3>
+            <br>
+            <div class="tknInfo">
+            <img class="tknImg" src="https://pbs.twimg.com/profile_images/1683443669163028481/q1i3sD9X_400x400.jpg" alt="Utilitex Logo">
+            <ul class="tknInfoRes" id="tokenInfo">
+                <li><p id="issuerBalance">Total Supply: Loading...</p></li>
+                <li><p id="dropRemaining">Drop Remaining: Loading...</p></li>
+                <li><p id="xrmineBalance">Token Balance: Loading...</p></li>
+            </ul>
+            </div>
+            
+            <div class="rewardButtons">
+            <a href="https://handy4ndy.github.io/XRmine_0.0.1" target="_blank">
+                <button class="webAddress"><img class="buttonImg" src="https://image.emojisky.com/974/15235974-middle.png" alt="Xrmine Website"></button>
+            </a>
+            <a href="https://twitter.com/XRmine_app" target="_blank">
+                <button class="socialchannel"><img class="buttonImg" src="https://www.kindpng.com/picc/m/186-1860892_transparent-shouting-png-speaking-emoji-png-download.png" alt="Xrmine Social Channel"></button>
+            </a>
+            <a href="https://xrpl.win/project/xrmineinfo" target="_blank">
+                <button class="distribution"><img class="buttonImg" src="https://xrpl.win/res/img/xrplwin_logo_80.webp" alt="XRPL win"></button>
+            </a>
+            </div>
+        
+            <p id="dailyBonus">Daily Bonus (max x3)</p>
+            <p id="engagementBonus">Engagement Bonus (max x3)</p>
+        
+            <div class="mineAnimation">
+        
+                <img class="mineImg" id="mineImg1" src="assets/images/rockbreak1.png" alt="base mine image" onclick="mineImageClick(1)">
+                <img class="mineImg" id="mineImg2" src="assets/images/rockbreak2.png" alt="base mine image" onclick="mineImageClick(2)">
+                <img class="mineImg" id="mineImg3" src="assets/images/rockbreak3.png" alt="base mine image" onclick="mineImageClick(3)">
+                <img class="mineImg" id="mineImg4" src="assets/images/rockbreak4.png" alt="base mine image" onclick="mineImageClick(4)">
+                <img class="mineImg" id="mineImg5" src="assets/images/rockbreak5.png" alt="base mine image" onclick="mineImageClick(5)">
+            
+        
+            </div>
+            
+        </div>  
+    </section>
+        
+        
+
+    </main>
+    
+
+    <script src="node_modules/xrpl/build/xrpl-latest-min.js"></script>
+    <script src="node_modules/xrpl/build/xrpl-latest.js"></script>
+    <script src="https://xumm.app/assets/cdn/xumm.min.js"></script>
+    <script src="assets/scripts/gettokenbalance.js"></script>
+    <script src="assets/scripts/contentlock.js"></script>
+    <script src="assets/scripts/xrminemining.js"></script>
+    <script src="assets/scripts/mine.js"></script>
+    <script src="assets/scripts/sendToken.js"></script>
+    
+</body>
+
+</html>

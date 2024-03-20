@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="eng-gb">
+
+<head>
+    <title>XRmine.app</title>
+    <meta charset="UTF-8">
+    <meta name="XRmine" content="Creating a safer route into digital assets on the XRP Ledger">
+    <meta author="Aspencer">
+    <meta keywords="XRP, xrp, XRPL, xrpl, xrp community, app, web app, XRMine, xrmine, digital assets, blockchain">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/stylesheet/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <img id="logo" src="assets/images/XRmine.title.png" alt="XRmine Logo">
+        </div>
+    </header>
+
+    <main>
+
+        <section class="intro">
+
+            <h1>Welcome to the world of XRPL innovation!</h1>
+
+            <p>At XRMine, you'll discover the visionary teams behind NFT Marketplaces, Distribution & Education Platforms, The Metaverse, and more. <br> <img src="https://coincu.com/wp-content/uploads/2023/01/ledger_logo.png" alt="XRPL logo"> <br> Get ready to earn rewards by engaging with these outstanding projects and explore the best the Ledger has to offer.</p>
+            <img src="assets/images/apptempv2.png">
+        </section>
+        
+        <div class="section2">
+
+            <button class="signinBtn" id="signinbutton" onclick="xumm.authorize()">Login</button>
+            <button class="signinBtn" onclick="window.open('https://handy4ndy.github.io/XRmine_0.0.1/', '_blank')">Website</button>
+
+        </div>
+
+        <div class="section3">
+
+            <p>*XRMine Tokens are required to access our application, please visit our website for more information.</p>
+
+        </div>
+
+        <div id="qrCodeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeQRCodeModal()">&times;</span>
+                <a id="deepLinkAnchor" target="_blank">
+                    <img id="qrCodeImage" alt="QR Code">
+                </a>
+                <p>Scan the QR or Sign the request in the Xumm App</p>
+            </div>
+        </div>
+        
+
+    </main>
+    
+
+    <script src="node_modules/xrpl/build/xrpl-latest-min.js"></script>
+    <script src="https://xumm.app/assets/cdn/xumm.min.js"></script>
+    <script src="assets/scripts/login.js"></script>
+    <script src="assets/scripts/checkTrustlines.js"></script>
+    <script src="assets/scripts/burn.js"></script>
+    
+</body>
+
+</html>
