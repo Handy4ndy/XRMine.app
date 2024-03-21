@@ -10,25 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
 
-    - name: Deploy to production
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      env:
-        XAMAN_APIKEY: ${{ secrets.XAMAN_APIKEY }}
-        DROP_XRMINE: ${{ secrets.DROP_XRMINE }}
-      run: |
-        npm run build
-        npm run deploy
+      - name: Set up Xumm API key
+        env:
+          XAMAN_APIKEY: ${{ secrets.XAMAN_APIKEY }}
+        run: |
+          echo $XAMAN_APIKEY  # Just to verify the value is set correctly
