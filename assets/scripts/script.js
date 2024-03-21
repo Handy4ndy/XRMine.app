@@ -1,4 +1,4 @@
-var xumm = new Xumm('XAMAN_APIKEY');
+var xumm = new Xumm('${{ secrets.XAMAN_APIKEY }}');
 
 xumm.on("ready", () => console.log("Ready to explore whitepapers and set trustlines"));
 

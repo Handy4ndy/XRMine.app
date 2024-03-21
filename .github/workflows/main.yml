@@ -1,0 +1,34 @@
+name: XRmine App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Deploy to production
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      env:
+        XAMAN_APIKEY: ${{ secrets.XAMAN_APIKEY }}
+        DROP_XRMINE: ${{ secrets.DROP_XRMINE }}
+      run: |
+        npm run build
+        npm run deploy
