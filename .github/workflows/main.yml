@@ -12,9 +12,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Secret API
-        run: echo ${{ secrets.XAMAN_APIKEY }}
-
+      - name: Set up environment variable for XAMAN_APIKEY
+        run: echo "export XAMAN_APIKEY=${{ secrets.XAMAN_APIKEY }}" >> $GITHUB_ENV
+      
+      - name: Set up environment variable for DROP_XRMINE
+        run: echo "export DROP_XRMINE=${{ secrets.DROP_XRMINE }}" >> $GITHUB_ENV
+      
       - name: Secret Wallet
         run: echo ${{ secrets.DROP_XRMINE }}
 
