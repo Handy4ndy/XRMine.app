@@ -1,4 +1,5 @@
-var xumm = new Xumm(`"${{ XAMAN_APIKEY }}"`);
+const apiKey = process.env.XAMAN_APIKEY
+var xumm = new Xumm(apiKey);
 
 const burnRequestSigned = sessionStorage.getItem('burnRequestSigned');
 const isLoggedIn = sessionStorage.getItem('isLoggedIn');
