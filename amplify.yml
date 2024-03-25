@@ -12,4 +12,4 @@ frontend:
       - '**/*'
   cache:
     paths:
-    
+      .well-known/xrp-ledger.toml

@@ -1,0 +1,24 @@
+[[ISSUERS]]
+address = "rfXMq3BMX2dTzJtG4pnhr49u6sHkVQXpWL"
+name = "XRMine"
+
+[[TOKENS]]
+issuer = "rfXMq3BMX2dTzJtG4pnhr49u6sHkVQXpWL"
+currency = "58524D696E650000000000000000000000000000"
+name = "XRMine"
+desc = "An engagement rewards platform, resolving the issue of on-boarding"
+icon = "https://www.xrmine.app/assets/images/XRMinetkn.png"
+
+[[TOKENS.WEBLINKS]]
+url = "https://www.xrmine.app"
+type = "Web App"
+title = "XRMine.app"
+
+[[TOKENS.WEBLINKS]]
+url = "https://handy4ndy.github.io/XRmine_0.0.1/"
+type = "website"
+title = "Token Info Dashboard"
+
+[[TOKENS.WEBLINKS]]
+url = "https://twitter.com/@XRmine_app"
+type = "socialmedia"
