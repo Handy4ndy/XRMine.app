@@ -1,0 +1,5 @@
+.env.encrypted
+.env.decrypted
+.env
+node_modules
+assets
