@@ -1,23 +1,24 @@
 {
-  "name": "XRMine.app",
-  "description": "An engagement rewards platform for XRPL users",
+  "name": "xrmine-0.1.0",
+  "description": "",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "server.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "dotenv-webpack": "^8.1.0",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
     "node": "^21.7.1",
+    "path": "^0.12.7",
     "require": "^2.4.20",
     "ripple-lib": "^1.10.1",
     "xrpl": "^3.0.0",
-    "xrpl-client": "^2.4.0",
-    "xumm": "^1.7.7",
-    "xumm-sdk": "^1.11.1"
+    "xumm": "^1.7.7"
   },
   "keywords": [],
-  "author": "Handy_4ndy",
+  "author": "Andrew Spencer",
   "license": "ISC"
-  
 }

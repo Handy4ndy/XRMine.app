@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+        <meta name="XRmine" content="Creating a safer route into digital assets on the XRP Ledger">
+        <meta author="Aspencer">
+        <meta keywords="XRP, xrp, XRPL, xrpl, xrp community, app, web app, XRMine, xrmine, digital assets, blockchain">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>//XRmine App</title>
+        <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1683443669163028481/q1i3sD9X_400x400.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/stylesheet/trustset.css">
+  
+</head>
+  <body>
+    <header>
+
+    <h1 id="accountaddress">...</h1>
+
+    <textarea id="trustlineArea" rows="10" cols="300"></textarea>
+    
+
+    </header>
+    <main>
+    <!----------XRMine--------------->
+
+    <div class="trustlineDiv" id="trustsetXrmine">
+      <h3 class="tknTitle">XRmine</h3>
+      <br>
+    
+      <div class="tknInfo">
+        <img class="tknImg" src="https://pbs.twimg.com/profile_images/1683443669163028481/q1i3sD9X_400x400.jpg"
+          alt="XRMine Logo">
+        <p class="tknPara">Sharing what "Good Looks Like" on the XRPL!</p>
+      </div>
+    
+      <a id="xrmineWpBtn" href="https://handy4ndy.github.io/XRmine_0.0.1/whitepaper.html" target="_blank">
+        <button>Whitepaper</button>
+      </a>
+    
+      <button id="trustSetXrmine"onclick="setXRmineTrustline()" disabled>trustline</button>
+    
+    </div>
+    
+    <br><br>
+    
+    <div class="mineDiv" id="xrmineMineBtn">
+      <h3>XRmine</h3>
+      <div class="tknInfo">
+        <img class="tknImg" src="https://pbs.twimg.com/profile_images/1618177055413215232/qhqkYeJ__400x400.jpg"
+          alt="XRMine Logo">
+        <div class="tknMine">
+        <h4>XRMine</h4>
+        <em>Sharing what "Good Looks Like" on the XRPL!</em>
+        <p id="xrmineBalance">Balance</p>
+      </div>
+      <button onclick="window.location.href = 'xrmine.html'">Data Mine</button>
+
+    
+      </div>
+    </div>
+
+
+    <!----------TreasuryXRPL--------------->
+
+
+    <div class="trustlineDiv" id="trustsetTreasury">
+      <h3 class="tknTitle">Treasury</h3>
+      <br>
+    
+      <div class="tknInfo">
+        <img class="tknImg" src="https://pbs.twimg.com/profile_images/1618177055413215232/qhqkYeJ__400x400.jpg"
+          alt="Treasury Logo">
+        <p class="tknPara">TreasuryXRPL's rewards token for Acadamy!</p>
+      </div>
+    
+      <a id="treasuryWpBtn" href="https://www.trsryxrpl.com/wp-content/uploads/2022/03/WHITEPAPER-2.0.pdf" target="_blank">
+        <button>Whitepaper</button>
+      </a>
+    
+      <button id="trustSetTreasury" onclick="setTreasuryTrustline()" disabled>trustline</button>
+    
+    </div>
+    
+    <br><br>
+    
+    <div class="mineDiv" id="treasuryMineBtn">
+      <h3>Treasury</h3>
+      <br>
+      <div class="tknInfo">
+        <img class="tknImg" src="https://pbs.twimg.com/profile_images/1618177055413215232/qhqkYeJ__400x400.jpg"
+          alt="Treasury Logo">
+        <p>TreasuryXRPL's rewards token for Acadamy!</p>
+      </div>
+      <p id="treasuryBalance">Balance</p>
+      <button onclick="window.location.href = 'treasury.html'">Data Mine</button>
+    </div>
+
+    <!----------NFTempo--------------->
+
+    <div class="trustlineDiv" id="trustsetNftempo">
+      <h3 class="tknTitle">NFTempo</h3>
+      <br>
+    
+      <div class="tknInfo">
+        <img class="tknImg" src="https://pbs.twimg.com/profile_images/1606459577553354753/PjpAnb2Z_400x400.jpg"
+          alt="NFTempo Logo">
+        <p class="tknPara">Marketplace for Music artists, Mint MP4's as NFTs!</p>
+      </div>
+    
+      <a id="nftempoWpBtn" href="https://www.nftempo.io/LightpaperLatest.pdf" target="_blank">
+        <button>Whitepaper</button>
+      </a>
+    
+      <button id="trustSetNftempo" onclick="setNFTempoTrustline()" disabled >trustline</button>
+    
+    </div>
+    
+    <br><br>
+    
+    <div class="mineDiv" id="nftempoMineBtn">
+      <h3>NFTempo</h3>
+      <br>
+      <div class="tknInfo">
+        <img class="tknImg" src="https://pbs.twimg.com/profile_images/1606459577553354753/PjpAnb2Z_400x400.jpg"
+          alt="NFTempo Logo">
+        <p>Marketplace for Music artists, Mint MP4's as NFTs!</p>
+      </div>
+      <p id="nftempoBalance">Balance</p>
+      <button onclick="window.location.href = 'nftempo.html'">Data Mine</button>
+    </div>
+
+    <!------------xspectar--------------->
+
+    <div class="trustlineDiv" id="trustsetXspectar">
+      <h3 class="tknTitle">xSPECTAR</h3>
+      <br>
+    
+      <div class="tknInfo">
+        <img class="tknImg" src="https://cdn.xumm.pro/cdn-cgi/image/width=210,height=210,quality=75,fit=crop/currencies-tokens/rh5jzTCdMRCVjQ7LT6zucjezC47KATkuvv.png"
+          alt="xSPECTAR Logo">
+        <p class="tknPara">Creating the Metaverse on the XRPL!</p>
+      </div>
+    
+      <a id="xspectarWpBtn" href="https://xspectar.gitbook.io/whitepaper/" target="_blank">
+        <button>Whitepaper</button>
+      </a>
+    
+      <button id="trustSetXspectar" onclick="setXspectarTrustline(xumm)" disabled>trustline</button>
+    
+    </div>
+    
+    <br><br>
+    
+    <div class="mineDiv" id="xspectarMineBtn">
+      <h3>xSPECTAR</h3>
+      <br>
+      <div class="tknInfo">
+        <img class="tknImg" src="https://cdn.xumm.pro/cdn-cgi/image/width=210,height=210,quality=75,fit=crop/currencies-tokens/rh5jzTCdMRCVjQ7LT6zucjezC47KATkuvv.png"
+          alt="xSPECTAR Logo">
+        <p>Creating the Metaverse on the XRPL!</p>
+      </div>
+      <p id="xspectarBalance">Balance</p>
+      <button>Mine Tokens</button>
+    </div>
+
+    <div id="qrCodeModal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeQRCodeModal()">&times;</span>
+          <a id="deepLinkAnchor" target="_blank">
+              <img id="qrCodeImage" alt="QR Code">
+          </a>
+          <p>Scan or Click the QR<br>To Sign the request with Xaman</p>
+      </div>
+  </div>
+
+  </main>
+
+  <footer><button id="logoutbutton" onclick="xumm.logout()">Logout</button>
+  </footer>
+    
+ 
+    <script src="https://xumm.app/assets/cdn/xumm.min.js"></script>
+    <script src="/xrpl-latest-min.js"></script>
+    <script src="/app.js"></script>
+    <script src="/xspectar.js"></script>
+    <script src="/treasury.js"></script>
+    <script src="/nftempo.js"></script>
+    <script src="/checkTrustlines.js"></script>
+    
+  </body>
+</html>

@@ -1,4 +1,5 @@
 async function checkTrustlines(account) {
+    
     const client = new xrpl.Client("wss://xrplcluster.com");
     await client.connect();
   
@@ -14,9 +15,43 @@ async function checkTrustlines(account) {
 
       await xrmineTrustline(response);
       await treasuryTrustline(response);
-      await utilitexTrustline(response);
       await nftempoTrustline(response);
-      await swisstechTrustline(response);
+      await xspectarTrustline(response);
+
+      async function xspectarTrustline(response) {
+        // Define the currency you want to check for
+        const currencyToCheck = "7853504543544152000000000000000000000000";
+      
+        // Check if the specified currency is found in the account
+        const currencyFound = response.result.lines.some(line => line.currency === currencyToCheck);
+      
+        if (currencyFound) {
+          document.getElementById("trustlineArea").textContent += "Trustline for xSPECTAR Found\n"
+    
+          // Hide the trustsetXrmine div
+          document.getElementById("trustsetXspectar").style.display = "none";
+          document.getElementById("xspectarMineBtn").style.display = "block";
+      
+          // Display the balance if the currency is found
+          const balance = response.result.lines.find(line => line.currency === currencyToCheck).balance;
+          document.getElementById("xspectarBalance").innerText = balance;
+        } else {
+          document.getElementById("trustlineArea").textContent += "Building the Metaverse on the XRPL! -xSPECTAR\n"
+          // Show the trustsetXrmine div
+          document.getElementById("trustsetXspectar").style.display = "block";
+          document.getElementById("xspectarMineBtn").style.display = "none";
+      
+          function enableTrustSetBtn() {
+            document.getElementById("trustSetXspectar").disabled = false;
+            console.log("TrustSetBtn enabled"); // Debugging statement
+          }
+      
+          document.getElementById("xspectarWpBtn").addEventListener("click", function () {
+            console.log("Whitepaper button clicked"); // Debugging statement
+            setTimeout(enableTrustSetBtn, 300); // 3 minutes (180,000 milliseconds)
+          });
+        }
+      }
 
       async function treasuryTrustline(response) {
         // Define the currency you want to check for
@@ -87,41 +122,6 @@ async function checkTrustlines(account) {
           });
         }
       }
-      
-      async function utilitexTrustline(response) {
-        // Define the currency you want to check for
-        const currencyToCheck = "5574696C69746558000000000000000000000000";
-      
-        // Check if the specified currency is found in the account
-        const currencyFound = response.result.lines.some(line => line.currency === currencyToCheck);
-      
-        if (currencyFound) {
-          document.getElementById("trustlineArea").textContent += "Trustline for Utilitex Found\n"
-    
-          // Hide the trustsetXrmine div
-          document.getElementById("trustsetUtilitex").style.display = "none";
-          document.getElementById("utilitexMineBtn").style.display = "block";
-      
-          // Display the balance if the currency is found
-          const balance = response.result.lines.find(line => line.currency === currencyToCheck).balance;
-          document.getElementById("utilitexBalance").innerText = balance;
-        } else {
-          document.getElementById("trustlineArea").textContent += "Discover how we support XRPL Startup's - Utilitex\n"
-          // Show the trustsetXrmine div
-          document.getElementById("trustsetUtilitex").style.display = "block";
-          document.getElementById("utilitexMineBtn").style.display = "none";
-      
-          function enableTrustSetBtn() {
-            document.getElementById("trustSetUtilitex").disabled = false;
-            console.log("TrustSetBtn enabled"); // Debugging statement
-          }
-      
-          document.getElementById("utilitexWpBtn").addEventListener("click", function () {
-            console.log("Whitepaper button clicked"); // Debugging statement
-            setTimeout(enableTrustSetBtn, 180000); // 3 minutes (180,000 milliseconds)
-          });
-        }
-      }
 
       async function nftempoTrustline(response) {
         // Define the currency you want to check for
@@ -153,49 +153,10 @@ async function checkTrustlines(account) {
       
           document.getElementById("nftempoWpBtn").addEventListener("click", function () {
             console.log("Whitepaper button clicked"); // Debugging statement
-            setTimeout(enableTrustSetBtn, 180000); // 3 minutes (180,000 milliseconds)
+            setTimeout(enableTrustSetBtn, 300); // 3 minutes (180,000 milliseconds)
           });
         }
       }
-      
-      async function swisstechTrustline(response) {
-        // Define the currency you want to check for
-        const currencyToCheck = "5377697373546563680000000000000000000000";
-      
-        // Check if the specified currency is found in the account
-        const currencyFound = response.result.lines.some(line => line.currency === currencyToCheck);
-      
-        if (currencyFound) {
-          document.getElementById("trustlineArea").textContent += "Trustline for SwissTech Found\n"
-    
-          // Hide the trustsetXrmine div
-          document.getElementById("trustsetSwisstech").style.display = "none";
-          document.getElementById("swisstechMineBtn").style.display = "block";
-      
-          // Display the balance if the currency is found
-          const balance = response.result.lines.find(line => line.currency === currencyToCheck).balance;
-          document.getElementById("swisstechBalance").innerText = balance;
-        } else {
-          document.getElementById("trustlineArea").textContent += "Innovating Airdrops on the XRPL! -Swisstech\n"
-          // Show the trustsetXrmine div
-          document.getElementById("trustsetSwisstech").style.display = "block";
-          document.getElementById("swisstechMineBtn").style.display = "none";
-      
-          function enableTrustSetBtn() {
-            document.getElementById("trustSetSwisstech").disabled = false;
-            console.log("TrustSetBtn enabled"); // Debugging statement
-          }
-      
-          document.getElementById("swisstechWpBtn").addEventListener("click", function () {
-            console.log("Whitepaper button clicked"); // Debugging statement
-            setTimeout(enableTrustSetBtn, 180000); // 3 minutes (180,000 milliseconds)
-          });
-        }
-      }
-      
-      
-      await xspectarTrustline(response);
-      await radicalxTrustline(response);
       
     } catch (error) {
       console.error("Error checking trustlines:", error);

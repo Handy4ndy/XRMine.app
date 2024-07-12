@@ -1,4 +1,4 @@
-function setNFTempoTrustline() {
+function setNFTempoTrustline(xumm) {
   xumm.payload.createAndSubscribe({
         TransactionType: "TrustSet",
         Fee: "12",
@@ -57,3 +57,20 @@ function setNFTempoTrustline() {
       return deepLinkBaseUrl + payloadId;
   }
 }
+
+fetch("/api/key")
+  .then((response) => response.json())
+  .then((data) => {
+      const XUMM_API_KEY = data.apiKey;
+
+      var xumm = new Xumm(XUMM_API_KEY);
+
+      // Find the button element by its ID
+      const trustSetNftempoButton = document.getElementById("trustSetNftempo");
+
+      // Add an event listener to the button
+      trustSetNftempoButton.addEventListener("click", function() {
+          // Call the trustline setting function when the button is clicked
+          setNFTempoTrustline(xumm);
+      });
+  });

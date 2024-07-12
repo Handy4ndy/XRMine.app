@@ -1,3 +1,4 @@
+let xumm;
 let currentImage = 1;
         let clicksRequired = Math.floor(Math.random() * 10) + 1; // Random clicks required from 1 to 10
     
@@ -42,6 +43,29 @@ let currentImage = 1;
     document.querySelector('.webAddress').addEventListener('click', increaseEngagement);
     document.querySelector('.socialchannel').addEventListener('click', increaseEngagement);
     document.querySelector('.distribution').addEventListener('click', increaseEngagement);
-    
-     
 
+
+// Fetch API key
+fetch("/api/key")
+  .then((response) => response.json())
+  .then((data) => {
+    const XUMM_API_KEY = data.apiKey;
+
+    // Initialize xumm
+    xumm = new Xumm(XUMM_API_KEY);
+
+
+xumm.on("ready", () => console.log("Ready to Mine!!"));
+
+xumm.user.account.then(account => {
+    console.log(account + " has been transferred to the mining page");
+    document.getElementById("accountaddress").innerText = account;
+    checkBalances(account);
+});
+
+xumm.on("logout", async () => {
+    console.log("User logged out, Returning to home page");
+    window.location.href = "index.html";
+  });
+
+  });

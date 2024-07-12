@@ -1,13 +1,31 @@
-function setXRmineTrustline() {
+/*fetch("/api/key")
+  .then((response) => response.json())
+  .then((data) => {
+      const XUMM_API_KEY = data.apiKey;
+
+      var xumm = new Xumm(XUMM_API_KEY);
+
+      // Find the button element by its ID
+      const trustSetXspectarButton = document.getElementById("trustSetXspectar");
+
+      // Add an event listener to the button
+      trustSetXspectarButton.addEventListener("click", function() {
+          // Call the trustline setting function when the button is clicked
+          setXspectarTrustline(xumm);
+      });
+  });
+
+function setXspectarTrustline(xumm) {
+
     xumm.payload.createAndSubscribe({
       TransactionType: 'TrustSet',
-      Fee: '12',
-      Flags: '131072',
-      LimitAmount: {
-          currency: '58524D696E650000000000000000000000000000',
-          issuer: 'rfXMq3BMX2dTzJtG4pnhr49u6sHkVQXpWL',
-          value: '96123747.11173728',
-      },
+              Fee: '12',
+              Flags: '131072',
+              LimitAmount: {
+                  currency: '7853504543544152000000000000000000000000',
+                  issuer: 'rh5jzTCdMRCVjQ7LT6zucjezC47KATkuvv',
+                  value: '88870977.6946372'
+              },
     }, eventMessage => {
         if (Object.keys(eventMessage.data).indexOf('opened') > -1) {
             console.log("Payload sent to user");
@@ -55,3 +73,20 @@ function setXRmineTrustline() {
         return deepLinkBaseUrl + payloadId;
     }
   }
+
+  fetch("/api/key")
+  .then((response) => response.json())
+  .then((data) => {
+      const XUMM_API_KEY = data.apiKey;
+
+      var xumm = new Xumm(XUMM_API_KEY);
+
+      // Find the button element by its ID
+      const trustSetXspectarButton = document.getElementById("trustSetXspectar");
+
+      // Add an event listener to the button
+      trustSetXspectarButton.addEventListener("click", function() {
+          // Call the trustline setting function when the button is clicked
+          setXspectarTrustline(xumm);
+      });
+  });*/
