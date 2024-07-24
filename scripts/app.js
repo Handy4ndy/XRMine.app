@@ -1,14 +1,38 @@
-// Define xumm globally
-let xumm;
+const algorithm = 'AES-256-CBC';
+const key = CryptoJS.enc.Hex.parse('94b57349db468e70d0daa2ca86a5513fc31984af810e75003d92ffb81f36f638');
+const fallbackIv = CryptoJS.enc.Hex.parse('9661f6b347aec504c70fd5256d80e364'); // Fallback IV, use only if server doesn't provide one
 
-// Fetch API key
+function decrypt(encryptedText, ivHex) {
+  try {
+    const iv = ivHex ? CryptoJS.enc.Hex.parse(ivHex) : fallbackIv;
+    const ciphertext = CryptoJS.enc.Hex.parse(encryptedText);
+    const encrypted = CryptoJS.lib.CipherParams.create({
+      ciphertext: ciphertext
+    });
+    const decrypted = CryptoJS.AES.decrypt(encrypted, key, {
+      iv: iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    });
+    const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);
+    console.log('Decrypted Text:', decryptedText); // Debugging line
+    return decryptedText;
+  } catch (error) {
+    console.error('Decryption Error:', error);
+    return null;
+  }
+}
+
 fetch("/api/key")
-  .then((response) => response.json())
-  .then((data) => {
-    const XUMM_API_KEY = data.apiKey;
-
-    // Initialize xummz
-    xumm = new Xumm(XUMM_API_KEY);
+  .then(response => response.json())
+  .then(data => {
+    console.log('Encrypted API Key:', data.apiKey); // Debugging line
+    console.log('IV:', data.iv); // Debugging line
+    const decryptedApiKey = decrypt(data.apiKey, data.iv);
+    
+    if (decryptedApiKey) {
+      // Initialize xumm with the decrypted API key
+      const xumm = new Xumm(decryptedApiKey);
 
     xumm.on("ready", () =>
       console.log("Ready to explore whitepapers and set trustlines")
@@ -26,7 +50,17 @@ fetch("/api/key")
       window.location.href = "index.html";
     });
 
-  });
+  
+  } else {
+    console.error('Failed to decrypt API key');
+  }
+})
+.catch(error => {
+  console.error('Fetch Error:', error);
+});
+  
+
+
 
   function closeQRCodeModal() {
     document.getElementById("qrCodeModal").style.display = "none";
