@@ -33,6 +33,7 @@ async function sendTokens() {
 
     if (payResult.result.meta.TransactionResult == "tesSUCCESS") {
       console.log("Transaction succeeded");
+      window.location.href = "trustset.html";
     } else {
       throw "Error sending transaction";
     }

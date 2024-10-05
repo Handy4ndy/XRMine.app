@@ -7,6 +7,7 @@ let currentImage = 1;
                 // Show an alert when the 5th image is clicked
                 alert("You mined 5 XRmine tokens");
                 sendTokens();
+        
             } else {
                 // Increment the click count
                 clicksRequired--;

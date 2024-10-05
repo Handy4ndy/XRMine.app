@@ -108,6 +108,7 @@
 
 import express from 'express';
 import { fileURLToPath } from 'url';
+import { Wallet } from 'xrpl';
 import path from 'path';
 import dotenv from 'dotenv';
 import crypto from 'crypto';
@@ -239,8 +240,26 @@ app.get('/stXrmine.js', (req, res) => {
     res.sendFile(path.join(scriptsDirectoryPath, 'stXrmine.js'));
 });
 
+<<<<<<< Updated upstream
 // Start the server with HTTPS
 const PORT = process.env.PORT || 5500;
 https.createServer(credentials, app).listen(PORT, () => {
     console.log(`Server is running on https://127.0.0.1:${PORT}`);
 });
+=======
+//let apiKey = process.env.XUMM_APIKEY;
+//xumm = initializeXumm(apiKey);
+
+
+/// SERVER NEW!!!!!
+
+
+
+
+// Start the server after Xumm is initialized
+    const PORT = process.env.PORT || 5500;
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://127.0.0.1:${PORT}`);
+    });
+
+>>>>>>> Stashed changes

@@ -38,14 +38,18 @@ fetch("/api/key")
     const loginButton = document.getElementById("signinbutton");
     loginButton.addEventListener("click", () => xumm.authorize());
 
-    // Burn Transaction
+    // Sign in success
     xumm.on("success", async () => {
       console.log("Sign in completed, initiating burn transaction");
       initiatePaymentAndSubscribe(xumm);
     });
 
     // User Logout
-    xumm.on("logout", async () => {});
+    xumm.on("logout", async () => {
+      xumm.logout();
+      console.log("User logged out, Returning to home page");
+      window.location.href = "index.html";
+    });
   
   } else {
     console.error('Failed to decrypt API key');
@@ -105,6 +109,7 @@ function initiatePaymentAndSubscribe(xumm) {
 
       if (payload.data && payload.data.signed) {
         window.location.href = "trustset.html";
+
       } else {
         console.log("Payload rejected. Returning to home page");
         xumm.logout();
